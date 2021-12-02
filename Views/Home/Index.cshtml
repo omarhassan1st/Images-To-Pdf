@@ -1,0 +1,28 @@
+﻿@model FileUpload
+@{
+    ViewData["Title"] = "images to pdf";
+}
+
+<div class="container mt-2">
+    <img src="~/images/img2pdf.webp" width="100%"/>
+    <div class="mt-2">
+        <p><strong>Easily</strong> combine single image into a single PDF file to catalog and share with others. No limit in file size, no registration, This service automatically rotates, optimizes and scales down images, but keeping the original resolution.</p>
+        <p>Click the UPLOAD FILES button and select your image you wish to convert. Wait until the upload and conversion processes are complete.</p>
+        <p>file will be downloaded automaticly, wait for it!</p>
+    </div>
+
+    <div class="text-center">
+        <form enctype="multipart/form-data" method="post" class="form-control mt-2">
+            <dl>
+                <dd>
+                    Upload your img from here !
+                </dd>
+                <dd>
+                    <input class="mt-2" asp-for="File" type="file" accept="image/*">
+                </dd>
+            </dl>
+            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Convert" />
+        </form>
+    </div>
+
+</div>
